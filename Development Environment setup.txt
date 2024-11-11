@@ -1,0 +1,41 @@
+#Install OpenJDK and eclipse on ubunto system
+
+
+sudo apt-get install openjdk-8-jdk
+
+sudo chmod -R 777 /opt/
+
+#eclipse
+
+eclipse-cpp-oxygen-2-linux-gtk-x86_64.tar.gz
+
+
+Download URL: 
+
+http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/2/eclipse-cpp-oxygen-2-linux-gtk-x86_64.tar.gz
+
+
+copy this file in the home directory and extract 
+
+go to eclipse folder and start eclipse (diamond symbol)
+
+here we need to specify our working directory
+
+>> otherlocation/computer/opt/ns-allinone-2.35 
+
+new > c++ project 
+
+name : ns-2.35
+
+makefileproject > Empty Project > Linux GCC > Finish
+
+Project > Clean
+
+Project > Build All
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+
+Ubuntu iso file
+
+
+http://old-releases.ubuntu.com/releases/16.04.3/ubuntu-16.04.3-desktop-amd64.iso
+
+
+
+
+Drag and Drop Options
+
+Go to Devices >> Insert Guest addition cd image >> Run
+
+Restart the system
+
+Devices >> Drag and Drop >> Bidirectional
+
+Devices >> Shared Clipboard >> Bidirectional
+
+Restart the system
+
+
+ns2 tar file
+
+google ns-allinone-2.35.tar.gz 
+
+get it from sourceforge.net/projects/nsnam/ 
+
+place this file in the download folder
+
+
+instructions file
+
+copy it to the virtual machine >> download folder
+
+
+keep these files in the download folder of ubuntu
+
