@@ -1,0 +1,54 @@
+#Install NS2 prerequisites
+
+sudo apt-get update
+sudo apt install gcc
+sudo apt-get install build-essential autoconf automake
+sudo apt-get install tcl8.5-dev tk8.5-dev
+sudo apt-get install perl xgraph libxt-dev libx11-dev libxmu-dev
+
+#Copy the NS2 source code to /opt/ directory
+
+sudo cp /home/hunain/Downloads/ns-allinone-2.35.tar.gz /opt/
+
+#Extract NS2 tar file
+
+cd /opt/
+sudo tar -zxvf ns-allinone-2.35.tar.gz
+
+#Change Line number 137 of file /opt/ns-allinone-2.35/ns-2.35/linkstate/ls.h to "void eraseAll() { this->erase(baseMap::begin(), baseMap::end()); }"
+
+sudo sed -i '137s/.*/void eraseAll() { this->erase(baseMap::begin(), baseMap::end()); }/' /opt/ns-allinone-2.35/ns-2.35/linkstate/ls.h
+
+#Install NS2
+
+cd ns-allinone-2.35
+sudo ./install
+
+#Add the path variables to bashrc file
+
+sudo gedit ~/.bashrc
+
+#####Copy from here#####
+
+# LD_LIBRARY_PATH
+OTCL_LIB=/opt/ns-allinone-2.35/otcl-1.14/
+NS2_LIB=/opt/ns-allinone-2.35/lib/
+USR_Local_LIB=/usr/local/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OTCL_LIB:$NS2_LIB:$USR_Local_LIB
+
+# TCL_LIBRARY
+TCL_LIB=/opt/ns-allinone-2.35/tcl8.5.10/library/
+USR_LIB=/usr/lib/
+export TCL_LIBRARY=$TCL_LIBRARY:$TCL_LIB:$USR_LIB
+
+# PATH
+XGRAPH=/opt/ns-allinone-2.35/xgraph-12.2/:/opt/ns-allinone-2.35/bin/:/opt/ns-allinone-2.35/tcl8.5.10/unix/:/opt/ns-allinone-2.35/tk8.5.10/unix/
+NS=/opt/ns-allinone-2.35/ns-2.35/
+NAM=/opt/ns-allinone-2.35/nam-1.15/
+export PATH=$PATH:$XGRAPH:$NS:$NAM
+
+#####Copy upto here#####
+
+source ~/.bashrc
+ns
+
